@@ -1,0 +1,28 @@
+{
+  "Programming": [
+    "Python", "R", "Java", "JavaScript", "TypeScript", "SQL", "C++", "C#", "Go", "PHP", "Ruby", "Scala", "Kotlin", "Swift"
+  ],
+  "Machine Learning & AI": [
+    "Machine Learning", "Deep Learning", "Natural Language Processing", "Computer Vision",
+    "TensorFlow", "PyTorch", "Scikit-learn", "Keras", "OpenCV", "Hugging Face", "MLOps", "LLM"
+  ],
+  "Data & Analytics": [
+    "Statistics", "Data Analysis", "Data Visualization", "Tableau", "Power BI", "Excel",
+    "Apache Spark", "Hadoop", "ETL", "Data Warehousing", "BigQuery", "Snowflake", "dbt"
+  ],
+  "Cloud & DevOps": [
+    "AWS", "Google Cloud Platform", "Microsoft Azure", "Docker", "Kubernetes", "Jenkins",
+    "CI/CD", "Terraform", "Ansible", "Linux", "Git", "GitHub Actions"
+  ],
+  "Web & Mobile": [
+    "React", "Vue.js", "Angular", "Node.js", "Django", "Flask", "FastAPI", "Spring Boot",
+    "HTML/CSS", "REST API", "GraphQL", "React Native", "Flutter", "iOS Development", "Android Development"
+  ],
+  "Databases": [
+    "MySQL", "PostgreSQL", "MongoDB", "Redis", "Elasticsearch", "Cassandra", "Oracle", "Microsoft SQL Server"
+  ],
+  "Other Technical": [
+    "Cybersecurity", "Network Engineering", "UI/UX Design", "Product Management", "Agile",
+    "Scrum", "System Design", "Microservices", "API Design", "Testing/QA"
+  ]
+}

@@ -1,0 +1,373 @@
+{
+  "Python": {
+    "course": "Python for Everybody Specialization",
+    "provider": "Coursera (University of Michigan)",
+    "duration": "8 months",
+    "level": "Beginner",
+    "url": "https://www.coursera.org/specializations/python"
+  },
+  "R": {
+    "course": "Data Science: R Basics",
+    "provider": "edX (HarvardX)",
+    "duration": "8 weeks",
+    "level": "Beginner",
+    "url": "https://www.edx.org/learn/r-programming"
+  },
+  "SQL": {
+    "course": "SQL for Data Science",
+    "provider": "Coursera (UC Davis)",
+    "duration": "4 weeks",
+    "level": "Beginner",
+    "url": "https://www.coursera.org/learn/sql-for-data-science"
+  },
+  "Java": {
+    "course": "Java Programming Masterclass",
+    "provider": "Udemy (Tim Buchalka)",
+    "duration": "80 hours",
+    "level": "Beginner to Advanced",
+    "url": "https://www.udemy.com/course/java-the-complete-java-developer-course/"
+  },
+  "JavaScript": {
+    "course": "The Complete JavaScript Course",
+    "provider": "Udemy (Jonas Schmedtmann)",
+    "duration": "69 hours",
+    "level": "Beginner to Advanced",
+    "url": "https://www.udemy.com/course/the-complete-javascript-course/"
+  },
+  "TypeScript": {
+    "course": "Understanding TypeScript",
+    "provider": "Udemy (Maximilian Schwarzmüller)",
+    "duration": "15 hours",
+    "level": "Intermediate",
+    "url": "https://www.udemy.com/course/understanding-typescript/"
+  },
+  "Machine Learning": {
+    "course": "Machine Learning Specialization",
+    "provider": "Coursera (Andrew Ng - Stanford)",
+    "duration": "3 months",
+    "level": "Beginner",
+    "url": "https://www.coursera.org/specializations/machine-learning-introduction"
+  },
+  "Deep Learning": {
+    "course": "Deep Learning Specialization",
+    "provider": "Coursera (Andrew Ng)",
+    "duration": "5 months",
+    "level": "Intermediate",
+    "url": "https://www.coursera.org/specializations/deep-learning"
+  },
+  "Natural Language Processing": {
+    "course": "Natural Language Processing Specialization",
+    "provider": "Coursera (DeepLearning.AI)",
+    "duration": "4 months",
+    "level": "Intermediate",
+    "url": "https://www.coursera.org/specializations/natural-language-processing"
+  },
+  "Computer Vision": {
+    "course": "Computer Vision Basics",
+    "provider": "Coursera (University at Buffalo)",
+    "duration": "3 weeks",
+    "level": "Beginner",
+    "url": "https://www.coursera.org/learn/computer-vision-basics"
+  },
+  "TensorFlow": {
+    "course": "DeepLearning.AI TensorFlow Developer",
+    "provider": "Coursera",
+    "duration": "4 months",
+    "level": "Intermediate",
+    "url": "https://www.coursera.org/professional-certificates/tensorflow-in-practice"
+  },
+  "PyTorch": {
+    "course": "PyTorch for Deep Learning",
+    "provider": "freeCodeCamp",
+    "duration": "25 hours",
+    "level": "Intermediate",
+    "url": "https://www.freecodecamp.org/news/learn-pytorch-for-deep-learning/"
+  },
+  "Scikit-learn": {
+    "course": "Hands-On Machine Learning with Scikit-Learn",
+    "provider": "O'Reilly",
+    "duration": "Self-paced book",
+    "level": "Intermediate",
+    "url": "https://www.oreilly.com/library/view/hands-on-machine-learning/9781098125967/"
+  },
+  "Keras": {
+    "course": "Introduction to Deep Learning with Keras",
+    "provider": "DataCamp",
+    "duration": "4 hours",
+    "level": "Intermediate",
+    "url": "https://www.datacamp.com/courses/introduction-to-deep-learning-with-keras"
+  },
+  "MLOps": {
+    "course": "Machine Learning Engineering for Production (MLOps)",
+    "provider": "Coursera (DeepLearning.AI)",
+    "duration": "4 months",
+    "level": "Advanced",
+    "url": "https://www.coursera.org/specializations/machine-learning-engineering-for-production-mlops"
+  },
+  "LLM": {
+    "course": "Generative AI with Large Language Models",
+    "provider": "Coursera (DeepLearning.AI)",
+    "duration": "3 weeks",
+    "level": "Intermediate",
+    "url": "https://www.coursera.org/learn/generative-ai-with-llms"
+  },
+  "Statistics": {
+    "course": "Statistics with Python Specialization",
+    "provider": "Coursera (University of Michigan)",
+    "duration": "4 months",
+    "level": "Beginner",
+    "url": "https://www.coursera.org/specializations/statistics-with-python"
+  },
+  "Data Analysis": {
+    "course": "Google Data Analytics Professional Certificate",
+    "provider": "Coursera",
+    "duration": "6 months",
+    "level": "Beginner",
+    "url": "https://www.coursera.org/professional-certificates/google-data-analytics"
+  },
+  "Data Visualization": {
+    "course": "Data Visualization with Tableau Specialization",
+    "provider": "Coursera (UC Davis)",
+    "duration": "4 months",
+    "level": "Beginner",
+    "url": "https://www.coursera.org/specializations/data-visualization"
+  },
+  "Tableau": {
+    "course": "Tableau 2024 A-Z: Hands-On Tableau Training",
+    "provider": "Udemy",
+    "duration": "11 hours",
+    "level": "Beginner",
+    "url": "https://www.udemy.com/course/tableau10/"
+  },
+  "Power BI": {
+    "course": "Microsoft Power BI Desktop for Business Intelligence",
+    "provider": "Udemy",
+    "duration": "12 hours",
+    "level": "Beginner",
+    "url": "https://www.udemy.com/course/microsoft-power-bi-up-running-with-power-bi-desktop/"
+  },
+  "Excel": {
+    "course": "Excel Skills for Business Specialization",
+    "provider": "Coursera (Macquarie University)",
+    "duration": "6 months",
+    "level": "Beginner to Advanced",
+    "url": "https://www.coursera.org/specializations/excel"
+  },
+  "Apache Spark": {
+    "course": "Big Data Analysis with Scala and Spark",
+    "provider": "Coursera (EPFL)",
+    "duration": "1 month",
+    "level": "Intermediate",
+    "url": "https://www.coursera.org/learn/scala-spark-big-data"
+  },
+  "ETL": {
+    "course": "ETL and Data Pipelines with Shell, Airflow and Kafka",
+    "provider": "Coursera (IBM)",
+    "duration": "3 weeks",
+    "level": "Intermediate",
+    "url": "https://www.coursera.org/learn/etl-and-data-pipelines-shell-airflow-kafka"
+  },
+  "BigQuery": {
+    "course": "Modernizing Data Lakes and Data Warehouses with GCP",
+    "provider": "Coursera (Google Cloud)",
+    "duration": "2 weeks",
+    "level": "Intermediate",
+    "url": "https://www.coursera.org/learn/data-lakes-data-warehouses-gcp"
+  },
+  "AWS": {
+    "course": "AWS Certified Solutions Architect Associate",
+    "provider": "AWS Training / Udemy (Stephane Maarek)",
+    "duration": "30 hours",
+    "level": "Intermediate",
+    "url": "https://aws.amazon.com/certification/certified-solutions-architect-associate/"
+  },
+  "Google Cloud Platform": {
+    "course": "Google Cloud Professional Data Engineer",
+    "provider": "Coursera (Google Cloud)",
+    "duration": "5 months",
+    "level": "Advanced",
+    "url": "https://www.coursera.org/professional-certificates/gcp-data-engineering"
+  },
+  "Microsoft Azure": {
+    "course": "Microsoft Azure Fundamentals AZ-900",
+    "provider": "Microsoft Learn",
+    "duration": "Self-paced",
+    "level": "Beginner",
+    "url": "https://learn.microsoft.com/en-us/training/courses/az-900t00"
+  },
+  "Docker": {
+    "course": "Docker for the Absolute Beginner",
+    "provider": "Udemy (KodeKloud)",
+    "duration": "5 hours",
+    "level": "Beginner",
+    "url": "https://www.udemy.com/course/learn-docker/"
+  },
+  "Kubernetes": {
+    "course": "Kubernetes for the Absolute Beginners",
+    "provider": "Udemy (KodeKloud)",
+    "duration": "6 hours",
+    "level": "Beginner",
+    "url": "https://www.udemy.com/course/learn-kubernetes/"
+  },
+  "Jenkins": {
+    "course": "Jenkins, From Zero To Hero",
+    "provider": "Udemy",
+    "duration": "8 hours",
+    "level": "Beginner",
+    "url": "https://www.udemy.com/course/jenkins-from-zero-to-hero/"
+  },
+  "CI/CD": {
+    "course": "Continuous Delivery & DevOps Specialization",
+    "provider": "Coursera (University of Virginia)",
+    "duration": "5 months",
+    "level": "Intermediate",
+    "url": "https://www.coursera.org/specializations/continuous-delivery-devops"
+  },
+  "Terraform": {
+    "course": "HashiCorp Certified: Terraform Associate",
+    "provider": "Udemy (Zeal Vora)",
+    "duration": "13 hours",
+    "level": "Intermediate",
+    "url": "https://www.udemy.com/course/hashicorp-certified-terraform-associate/"
+  },
+  "Linux": {
+    "course": "Linux Mastery: Master the Linux Command Line",
+    "provider": "Udemy",
+    "duration": "11 hours",
+    "level": "Beginner",
+    "url": "https://www.udemy.com/course/linux-mastery/"
+  },
+  "Git": {
+    "course": "Git Complete: The definitive guide",
+    "provider": "Udemy",
+    "duration": "6 hours",
+    "level": "Beginner",
+    "url": "https://www.udemy.com/course/git-complete/"
+  },
+  "React": {
+    "course": "React - The Complete Guide",
+    "provider": "Udemy (Maximilian Schwarzmüller)",
+    "duration": "58 hours",
+    "level": "Beginner to Advanced",
+    "url": "https://www.udemy.com/course/react-the-complete-guide-incl-redux/"
+  },
+  "Vue.js": {
+    "course": "Vue - The Complete Guide",
+    "provider": "Udemy",
+    "duration": "48 hours",
+    "level": "Beginner",
+    "url": "https://www.udemy.com/course/vuejs-2-the-complete-guide/"
+  },
+  "Angular": {
+    "course": "Angular - The Complete Guide",
+    "provider": "Udemy",
+    "duration": "36 hours",
+    "level": "Beginner",
+    "url": "https://www.udemy.com/course/the-complete-guide-to-angular-2/"
+  },
+  "Node.js": {
+    "course": "Node.js, Express, MongoDB & More",
+    "provider": "Udemy (Jonas Schmedtmann)",
+    "duration": "42 hours",
+    "level": "Intermediate",
+    "url": "https://www.udemy.com/course/nodejs-express-mongodb-bootcamp/"
+  },
+  "Django": {
+    "course": "Python and Django Full Stack Web Developer",
+    "provider": "Udemy",
+    "duration": "32 hours",
+    "level": "Intermediate",
+    "url": "https://www.udemy.com/course/python-and-django-full-stack-web-developer-bootcamp/"
+  },
+  "Flask": {
+    "course": "REST APIs with Flask and Python",
+    "provider": "Udemy",
+    "duration": "17 hours",
+    "level": "Intermediate",
+    "url": "https://www.udemy.com/course/rest-api-flask-and-python/"
+  },
+  "FastAPI": {
+    "course": "FastAPI - The Complete Course",
+    "provider": "Udemy",
+    "duration": "20 hours",
+    "level": "Intermediate",
+    "url": "https://www.udemy.com/course/fastapi-the-complete-course/"
+  },
+  "HTML/CSS": {
+    "course": "Build Responsive Real-World Websites with HTML and CSS",
+    "provider": "Udemy (Jonas Schmedtmann)",
+    "duration": "37 hours",
+    "level": "Beginner",
+    "url": "https://www.udemy.com/course/design-and-develop-a-killer-website-with-html5-and-css3/"
+  },
+  "REST API": {
+    "course": "REST API Design, Development & Management",
+    "provider": "Udemy",
+    "duration": "9 hours",
+    "level": "Intermediate",
+    "url": "https://www.udemy.com/course/rest-api/"
+  },
+  "GraphQL": {
+    "course": "GraphQL with React: The Complete Developers Guide",
+    "provider": "Udemy",
+    "duration": "13 hours",
+    "level": "Intermediate",
+    "url": "https://www.udemy.com/course/graphql-with-react-course/"
+  },
+  "MySQL": {
+    "course": "The Ultimate MySQL Bootcamp",
+    "provider": "Udemy (Colt Steele)",
+    "duration": "20 hours",
+    "level": "Beginner",
+    "url": "https://www.udemy.com/course/the-ultimate-mysql-bootcamp-go-from-sql-beginner-to-expert/"
+  },
+  "PostgreSQL": {
+    "course": "The Complete SQL Bootcamp 2024",
+    "provider": "Udemy (Jose Portilla)",
+    "duration": "9 hours",
+    "level": "Beginner",
+    "url": "https://www.udemy.com/course/the-complete-sql-bootcamp/"
+  },
+  "MongoDB": {
+    "course": "MongoDB - The Complete Developer's Guide",
+    "provider": "Udemy",
+    "duration": "17 hours",
+    "level": "Beginner",
+    "url": "https://www.udemy.com/course/mongodb-the-complete-developers-guide/"
+  },
+  "Redis": {
+    "course": "Redis: The Complete Developer's Guide",
+    "provider": "Udemy",
+    "duration": "16 hours",
+    "level": "Intermediate",
+    "url": "https://www.udemy.com/course/redis-the-complete-developers-guide-p/"
+  },
+  "Cybersecurity": {
+    "course": "Google Cybersecurity Professional Certificate",
+    "provider": "Coursera",
+    "duration": "6 months",
+    "level": "Beginner",
+    "url": "https://www.coursera.org/professional-certificates/google-cybersecurity"
+  },
+  "UI/UX Design": {
+    "course": "Google UX Design Professional Certificate",
+    "provider": "Coursera",
+    "duration": "6 months",
+    "level": "Beginner",
+    "url": "https://www.coursera.org/professional-certificates/google-ux-design"
+  },
+  "Product Management": {
+    "course": "Google Project Management Professional Certificate",
+    "provider": "Coursera",
+    "duration": "6 months",
+    "level": "Beginner",
+    "url": "https://www.coursera.org/professional-certificates/google-project-management"
+  },
+  "Agile": {
+    "course": "Agile with Atlassian Jira",
+    "provider": "Coursera (Atlassian)",
+    "duration": "3 weeks",
+    "level": "Beginner",
+    "url": "https://www.coursera.org/learn/agile-atlassian-jira"
+  }
+}
