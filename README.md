@@ -2,6 +2,11 @@
 
 **ETS Data Mining — Sistem Rekomendasi Karir IT berbasis Content-Based Filtering**
 
+## Authors
+Yafi Muhammad Faldin - 5052241026 
+Athaya Salsabila Alhen - 5052241004
+Nabila Chesaria Octavia P. - 5052241006
+
 CareerMatch adalah sistem rekomendasi yang membantu user menemukan posisi IT yang sesuai dengan skill dan preferensi mereka, lengkap dengan gap analysis terhadap target role dan personalized learning roadmap.
 
 ---
@@ -200,7 +205,3 @@ Tanpa kedua dataset tersebut, app jalan dalam **demo mode** dengan 2000 syntheti
 Project akademis — ETS Mata Kuliah Data Mining.
 
 ---
-
-## 👤 Author
-
-Yafi Faldin — Statistika, Institut Teknologi Sepuluh Nopember (ITS)
