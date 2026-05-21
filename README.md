@@ -26,7 +26,7 @@ CareerMatch adalah sistem rekomendasi yang membantu user menemukan posisi IT yan
 
 ### Mengapa Content-Based Filtering, bukan Hybrid?
 
-Dataset LinkedIn yang tersedia berisi job postings + skill requirements, tapi **tidak mengandung user_id dengan riwayat aplikasi**. Karena Collaborative Filtering memerlukan data interaksi user-item, kami memilih CBF murni — pilihan metodologi yang **honest** terhadap karakteristik data, bukan memaksakan hybrid yang tidak punya basis data yang cukup.
+Dataset LinkedIn yang tersedia berisi job postings + skill requirements, tapi **tidak mengandung user_id dengan riwayat aplikasi**. Karena Collaborative Filtering memerlukan data interaksi user-item, kami memilih CBF murni — pilihan metodologi yang **fit** terhadap karakteristik data, bukan memaksakan hybrid yang tidak punya basis data yang cukup.
 
 ---
 
