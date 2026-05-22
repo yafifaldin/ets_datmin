@@ -33,26 +33,30 @@ def render():
     _r('<div class="hero-divider"></div>')
 
     # ── Stats row ─────────────────────────────────────────────
-    _r("""
+    from src.data_loader import load_jobs_data as _ljd
+    _df_s, _ = _ljd()
+    _n_jobs = f"{len(_df_s):,}"
+    _n_skills = str(len([s for s in __import__('src.preprocessing', fromlist=['SKILL_CANONICAL']).SKILL_CANONICAL.values()]))
+    _r(f"""
         <div class="stats-strip fade-in">
         <div class="stats-item">
-        <div class="stats-number">2,000+</div>
+        <div class="stats-number">{_n_jobs}</div>
         <div class="stats-label">IT job postings analyzed</div>
         </div>
         <div class="stats-sep"></div>
         <div class="stats-item">
-        <div class="stats-number">70+</div>
+        <div class="stats-number">{_n_skills}+</div>
         <div class="stats-label">Technical skills tracked</div>
         </div>
         <div class="stats-sep"></div>
         <div class="stats-item">
-        <div class="stats-number">72%</div>
-        <div class="stats-label">Precision@10 on eval set</div>
+        <div class="stats-number">CBF</div>
+        <div class="stats-label">Content-Based Filtering</div>
         </div>
         <div class="stats-sep"></div>
         <div class="stats-item">
-        <div class="stats-number">15</div>
-        <div class="stats-label">IT role categories</div>
+        <div class="stats-number">25k+</div>
+        <div class="stats-label">LinkedIn job postings</div>
         </div>
         </div>
     """)

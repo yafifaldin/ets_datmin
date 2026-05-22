@@ -34,9 +34,49 @@ def _run_evaluation(_df, _matrix, _vocab):
 
 
 @st.cache_data(show_spinner=False)
-def _run_clustering(_matrix, _vocab, n_clusters=6):
-    km, labels, _ = fit_kmeans(_matrix, n_clusters=n_clusters, scale=False)
-    cluster_labels = label_clusters(km, _vocab)
+def _run_clustering(_df):
+    """Cluster jobs using TF-IDF on title+skills — more meaningful than binary skill vectors."""
+    from sklearn.feature_extraction.text import TfidfVectorizer
+    from sklearn.cluster import KMeans
+    from sklearn.preprocessing import normalize
+
+    df = _df.copy()
+    df['_text'] = df['title'].fillna('') + ' ' + df['skills_list'].fillna('').astype(str)
+
+    tfidf = TfidfVectorizer(max_features=200, stop_words='english', ngram_range=(1,2))
+    X = normalize(tfidf.fit_transform(df['_text']))
+
+    km = KMeans(n_clusters=8, random_state=42, n_init=10)
+    labels = km.fit_predict(X)
+
+    # Name clusters by dominant title words
+    feature_names = tfidf.get_feature_names_out()
+    DOMAIN_LABELS = {
+        frozenset(['data', 'analyst', 'sql', 'analysis']): 'Data Analytics & BI',
+        frozenset(['machine', 'learning', 'science', 'scientist']): 'Data Science & ML',
+        frozenset(['cloud', 'azure', 'aws', 'devops', 'engineer']): 'Cloud & DevOps',
+        frozenset(['software', 'java', 'engineer']): 'Software Engineering',
+        frozenset(['developer', 'javascript', 'frontend', 'backend']): 'Web Development',
+        frozenset(['product', 'manager', 'management']): 'Product Management',
+        frozenset(['quality', 'assurance', 'qa']): 'QA & Testing',
+        frozenset(['engineering', 'manager', 'program']): 'Engineering Management',
+    }
+
+    cluster_labels = {}
+    for cid in range(8):
+        top_idx = km.cluster_centers_[cid].argsort()[::-1][:6]
+        top_terms = set(feature_names[i] for i in top_idx)
+        label = f'Cluster {cid}'
+        best_overlap = 0
+        for domain_terms, domain_label in DOMAIN_LABELS.items():
+            overlap = len(top_terms & domain_terms)
+            if overlap > best_overlap:
+                best_overlap, label = overlap, domain_label
+        cluster_labels[cid] = {
+            'label': label,
+            'top_skills': list(top_terms)[:4],
+        }
+
     return labels, cluster_labels
 
 
@@ -97,7 +137,7 @@ def render():
         [
             _stat("Total postings",    f"{n_j:,}",  color=C_BLUE),
             _stat("Unique roles",      f"{n_t:,}",  color=C_BLUE),
-            _stat("Median salary",     f"${int(sal['median']/1000)}k" if sal else "—", color=C_GREEN),
+            _stat("Median salary", f"${int(sal['median']/1000)}k" if sal and sal.get('median', 0) > 50000 else "Limited data", color=C_GREEN),
             _stat("Remote positions",  f"{rem.get('remote_pct', 0):.0f}%", color=C_AMBER),
         ]
     ):
@@ -306,7 +346,7 @@ def render():
     _r('<div class="section-label fade-in" style="margin-top:32px;">Job Market Segmentation (K-Means)</div>')
 
     with st.spinner("Fitting clusters…"):
-        labels, cluster_labels = _run_clustering(matrix, vocab, n_clusters=6)
+        labels, cluster_labels = _run_clustering(df)
 
     df2 = df.copy()
     df2["cluster_id"] = labels
@@ -357,10 +397,13 @@ def render():
 
     # ── Salary by cluster ─────────────────────────────────────
     if "med_salary" in df2.columns:
+        # Only use jobs that have real salary data
         sal_cl = (
-            df2.groupby("cluster_name")["med_salary"]
-            .median().reset_index()
-            .rename(columns={"med_salary": "median_salary"})
+            df2[df2["med_salary"].notna()]
+            .groupby("cluster_name")["med_salary"]
+            .agg(median_salary="median", count="count")
+            .reset_index()
+            .query("count >= 10")  # Only show clusters with >=10 salary data points
             .dropna()
             .sort_values("median_salary", ascending=False)
         )

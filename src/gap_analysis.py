@@ -75,7 +75,7 @@ def gap_to_target_job(user_skills, target_title, df, skill_col="skills_list"):
         skill_counter.update(set(normalized))  # set untuk hitung di berapa banyak job
 
     # Skill requirement = skill yang muncul di > 30% job target
-    threshold = max(1, int(n_jobs * 0.3))
+    threshold = max(1, int(n_jobs * 0.2))
     required_skills = {s for s, freq in skill_counter.items() if freq >= threshold}
 
     overlap = skill_overlap(user_skills, list(required_skills))

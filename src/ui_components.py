@@ -170,7 +170,7 @@ def _stat_card_html(label: str, value: str, helper: str = None) -> str:
     )
     return (
         f'<div class="stat-card">'
-        f'<div class="stat-card-value">{value}</div>'
+        f'<div class="stat-card-value" style="font-size:clamp(16px,2.5vw,28px);word-break:break-word;line-height:1.2;">{value}</div>'
         f'<div class="stat-card-label">{label}</div>'
         f"{helper_html}"
         f"</div>"

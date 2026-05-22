@@ -1,10 +1,10 @@
 import streamlit as st
 
 NAV_ITEMS = [
-    ("home",      "🏠 Home"),
-    ("recommend", "🎯 Get Matched"),
-    ("dashboard", "📊 Dashboard"),
-    ("theory",    "📐 Theory"),
+    ("home",      "Home"),
+    ("recommend", "Get Matched"),
+    ("dashboard", "Dashboard"),
+    ("theory",    "Theory"),
 ]
 
 
@@ -13,95 +13,85 @@ def render_topnav():
     if "page" in st.session_state:
         current = st.session_state["page"]
 
-    # Style radio buttons to look exactly like a navbar
     st.markdown("""
     <style>
-    /* Hide default radio circle */
-    div[data-testid="stRadio"] > label { display: none; }
-    div[data-testid="stRadio"] > div[role="radiogroup"] {
-        display: flex !important;
-        flex-direction: row !important;
-        gap: 6px !important;
+    #MainMenu, footer, header { visibility: hidden; }
+    .block-container { padding-top: 1.5rem !important; }
+
+    /* Navbar card */
+    div[data-testid="stHorizontalBlock"]:first-of-type {
+        background: white;
+        border: 1px solid #E5E7EB;
+        border-radius: 10px;
+        padding: 8px 20px;
+        margin-bottom: 24px;
         align-items: center !important;
-        flex-wrap: nowrap !important;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.06);
     }
-    div[data-testid="stRadio"] > div[role="radiogroup"] > label {
-        display: flex !important;
-        align-items: center !important;
-        padding: 7px 18px !important;
-        border-radius: 999px !important;
-        border: 1.5px solid #e0dfdc !important;
-        background: transparent !important;
-        color: #3D3D3D !important;
-        font-size: 13px !important;
+    /* Nav buttons base */
+    div[data-testid="stHorizontalBlock"]:first-of-type button {
+        border-radius: 8px !important;
+        height: 38px !important;
+        font-size: 14px !important;
         font-weight: 500 !important;
-        cursor: pointer !important;
         white-space: nowrap !important;
-        transition: all 0.15s ease !important;
-        margin: 0 !important;
+        border: none !important;
+        box-shadow: none !important;
+        transform: none !important;
+        padding: 0 20px !important;
+        width: auto !important;
+        min-width: 100% !important;
     }
-    div[data-testid="stRadio"] > div[role="radiogroup"] > label:has(input:checked) {
+    div[data-testid="stHorizontalBlock"]:first-of-type button[kind="secondary"] {
+        background: transparent !important;
+        color: #555 !important;
+    }
+    div[data-testid="stHorizontalBlock"]:first-of-type button[kind="secondary"]:hover {
+        background: #F3F4F6 !important;
+        color: #111 !important;
+        box-shadow: none !important;
+    }
+    div[data-testid="stHorizontalBlock"]:first-of-type button[kind="primary"] {
         background: #0A66C2 !important;
         color: white !important;
-        border-color: #0A66C2 !important;
         font-weight: 600 !important;
-        box-shadow: 0 2px 8px rgba(10,102,194,0.25) !important;
     }
-    div[data-testid="stRadio"] > div[role="radiogroup"] > label:hover:not(:has(input:checked)) {
-        background: #EBF3FB !important;
-        border-color: #0A66C2 !important;
-        color: #004182 !important;
-    }
-    div[data-testid="stRadio"] > div[role="radiogroup"] > label > div {
-        display: none !important;
-    }
-    div[data-testid="stRadio"] > div[role="radiogroup"] > label > p {
-        margin: 0 !important;
-        font-size: 13px !important;
-        line-height: 1 !important;
+    div[data-testid="stHorizontalBlock"]:first-of-type button[kind="primary"]:hover {
+        background: #004182 !important;
+        box-shadow: none !important;
     }
     </style>
     """, unsafe_allow_html=True)
 
-    col_brand, col_nav, col_badge = st.columns([2, 5, 1.8])
+    # layout=wide, screen ~1200px
+    # brand=200px, 4 buttons ~130px each = 520px, filler = rest
+    # In ratio: brand=2, each button=1.3, filler=rest
+    c_brand, c1, c2, c3, c4, c_fill = st.columns([2, 1.5, 1.8, 1.6, 1.3, 2])
 
-    with col_brand:
+    with c_brand:
         st.markdown(
-            '<div style="display:flex;align-items:center;gap:8px;padding:6px 0;">'
-            '<span style="width:30px;height:30px;background:#0A66C2;color:white;border-radius:5px;'
-            'display:inline-flex;align-items:center;justify-content:center;'
-            'font-weight:900;font-size:16px;flex-shrink:0;">in</span>'
-            '<span style="font-size:15px;font-weight:700;color:#0D0D0D;white-space:nowrap;">'
-            'CareerMatch</span></div>',
+            '<div style="display:flex;align-items:center;gap:10px;">'
+            '<span style="width:32px;height:32px;background:#0A66C2;color:white;'
+            'border-radius:6px;display:inline-flex;align-items:center;'
+            'justify-content:center;font-weight:900;font-size:17px;flex-shrink:0;">in</span>'
+            '<b style="font-size:16px;color:#111;white-space:nowrap;">CareerMatch</b>'
+            '</div>',
             unsafe_allow_html=True)
 
-    with col_nav:
-        labels = [label for _, label in NAV_ITEMS]
-        keys   = [key   for key, _ in NAV_ITEMS]
-        current_label = next(l for k, l in NAV_ITEMS if k == current)
-        selection = st.radio(
-            "nav", labels,
-            index=labels.index(current_label),
-            horizontal=True,
-            label_visibility="collapsed",
-            key="navbar_radio"
-        )
-        if selection:
-            selected_key = keys[labels.index(selection)]
-            if selected_key != current:
-                st.session_state["page"] = selected_key
-                if selected_key == "recommend":
+    for col, (key, label) in zip([c1, c2, c3, c4], NAV_ITEMS):
+        with col:
+            t = "primary" if current == key else "secondary"
+            if st.button(label, key=f"nav__{key}", type=t,
+                         use_container_width=True):
+                st.session_state["page"] = key
+                if key == "recommend":
                     st.session_state["step"] = 1
                 st.rerun()
 
-    with col_badge:
+    with c_fill:
         st.markdown(
-            '<div style="text-align:right;padding:6px 0;">'
+            '<div style="text-align:right;">'
             '<span style="font-size:11px;color:#9CA3AF;background:#F9F9F8;'
-            'border:1px solid #E9E8E4;border-radius:999px;padding:4px 10px;'
+            'border:1px solid #E9E8E4;border-radius:999px;padding:4px 12px;'
             'white-space:nowrap;">ETS Data Mining</span></div>',
             unsafe_allow_html=True)
-
-    st.markdown(
-        '<hr style="border:none;border-top:1px solid #E9E8E4;margin:4px 0 20px;">',
-        unsafe_allow_html=True)

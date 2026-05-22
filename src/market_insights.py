@@ -21,9 +21,16 @@ def salary_distribution(df, salary_col="med_salary"):
     Returns:
         dict dengan median, mean, q1, q3, min, max
     """
+    # Try med_salary first, fallback to max_salary
+    if salary_col not in df.columns or df[salary_col].dropna().eq(0).all():
+        for alt in ["max_salary", "min_salary"]:
+            if alt in df.columns and df[alt].dropna().gt(0).any():
+                salary_col = alt
+                break
     if salary_col not in df.columns:
         return None
     salary = df[salary_col].dropna()
+    salary = salary[salary > 0]  # exclude zeros
     if len(salary) == 0:
         return None
     return {
